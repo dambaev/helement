@@ -66,3 +66,5 @@ module HElementary.ElementaryFFI where
 
 #ccall evas_object_del , Ptr <Evas_Object> -> IO ()
 
+#ccall elm_object_part_text_get , Ptr <Evas_Object> -> Ptr CChar-> IO (Ptr CChar)
+

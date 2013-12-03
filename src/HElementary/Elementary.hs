@@ -134,3 +134,8 @@ elm_entry_scrollbar_policy_set = c'elm_entry_scrollbar_policy_set
 
 evas_object_del:: Ptr C'Evas_Object-> IO ()
 evas_object_del = c'evas_object_del
+
+elm_object_text_get:: Ptr C'Evas_Object-> IO ByteString
+elm_object_text_get obj = do
+    ptr <- c'elm_object_part_text_get obj nullPtr
+    packCString ptr
