@@ -68,3 +68,4 @@ module HElementary.ElementaryFFI where
 
 #ccall elm_object_part_text_get , Ptr <Evas_Object> -> Ptr CChar-> IO (Ptr CChar)
 
+#ccall evas_object_smart_callback_call , Ptr <Evas_Object> -> Ptr CChar -> Ptr () -> IO ()

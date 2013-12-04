@@ -143,3 +143,10 @@ elm_object_text_get obj = do
     --return $! fromString str
     
 
+evas_object_smart_callback_call:: Ptr C'Evas_Object
+                               -> ByteString 
+                               -> Ptr ()
+                               -> IO ()
+evas_object_smart_callback_call ptr event eventinfo = do
+    useAsCString event $ \p_event -> do
+        c'evas_object_smart_callback_call ptr p_event eventinfo
