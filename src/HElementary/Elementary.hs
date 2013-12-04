@@ -139,3 +139,7 @@ elm_object_text_get:: Ptr C'Evas_Object-> IO ByteString
 elm_object_text_get obj = do
     ptr <- c'elm_object_part_text_get obj nullPtr
     packCString ptr
+    --str <- peekCString ptr
+    --return $! fromString str
+    
+
