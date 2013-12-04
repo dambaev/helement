@@ -21,6 +21,8 @@ import System.IO
 
 type EvasObjectSmartCallback = Ptr ()-> Ptr C'Evas_Object-> Ptr ()-> IO ()
 
+type PEvas_Object = Ptr C'Evas_Object
+
 elm_init:: IO Int
 elm_init = do
     !args <- getArgs
@@ -168,3 +170,20 @@ elm_object_focus_set ptr True =
     c'elm_object_focus_set ptr c'EINA_TRUE
 elm_object_focus_set ptr _ = 
     c'elm_object_focus_set ptr c'EINA_FALSE
+
+
+ecore_main_loop_iterate:: IO ()
+ecore_main_loop_iterate = c'ecore_main_loop_iterate
+
+
+elm_notify_allow_events_set:: PEvas_Object -> Bool -> IO ()
+elm_notify_allow_events_set ptr True = 
+    c'elm_notify_allow_events_set ptr c'EINA_TRUE
+elm_notify_allow_events_set ptr False = 
+    c'elm_notify_allow_events_set ptr c'EINA_FALSE
+    
+elm_notify_align_set:: PEvas_Object-> Double -> Double -> IO()
+elm_notify_align_set ptr x y = 
+    c'elm_notify_align_set ptr (realToFrac x) (realToFrac y)
+
+elm_notify_add = c'elm_notify_add

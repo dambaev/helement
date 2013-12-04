@@ -73,3 +73,11 @@ module HElementary.ElementaryFFI where
 #ccall elm_win_focus_highlight_enabled_set , Ptr <Evas_Object> -> <Eina_Bool> -> IO ()
 
 #ccall elm_object_focus_set , Ptr <Evas_Object> -> <Eina_Bool> -> IO ()
+
+#ccall ecore_main_loop_iterate , IO ()
+
+#ccall elm_notify_add , Ptr <Evas_Object> -> IO (Ptr <Evas_Object>)
+
+#ccall elm_notify_align_set , Ptr <Evas_Object> -> CDouble-> CDouble-> IO ()
+
+#ccall elm_notify_allow_events_set , Ptr <Evas_Object> -> <Eina_Bool> -> IO ()
