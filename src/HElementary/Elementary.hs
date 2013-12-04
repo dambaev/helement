@@ -159,3 +159,12 @@ elm_win_focus_highlight_enabled_set ptr True =
     c'elm_win_focus_highlight_enabled_set ptr c'EINA_TRUE
 elm_win_focus_highlight_enabled_set ptr _ = 
     c'elm_win_focus_highlight_enabled_set ptr c'EINA_FALSE
+
+
+elm_object_focus_set:: Ptr C'Evas_Object
+                                  -> Bool
+                                  -> IO ()
+elm_object_focus_set ptr True = 
+    c'elm_object_focus_set ptr c'EINA_TRUE
+elm_object_focus_set ptr _ = 
+    c'elm_object_focus_set ptr c'EINA_FALSE
