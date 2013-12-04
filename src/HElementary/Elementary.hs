@@ -150,3 +150,12 @@ evas_object_smart_callback_call:: Ptr C'Evas_Object
 evas_object_smart_callback_call ptr event eventinfo = do
     useAsCString event $ \p_event -> do
         c'evas_object_smart_callback_call ptr p_event eventinfo
+
+
+elm_win_focus_highlight_enabled_set:: Ptr C'Evas_Object
+                                  -> Bool
+                                  -> IO ()
+elm_win_focus_highlight_enabled_set ptr True = 
+    c'elm_win_focus_highlight_enabled_set ptr c'EINA_TRUE
+elm_win_focus_highlight_enabled_set ptr _ = 
+    c'elm_win_focus_highlight_enabled_set ptr c'EINA_FALSE
